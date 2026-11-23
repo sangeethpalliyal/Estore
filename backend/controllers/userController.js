@@ -3,7 +3,7 @@ import User from "../models/userModals.js";
 import bcrypt from "bcryptjs"
 
 import createToken from "../utils/createToken.js"
-import { async } from "rxjs";
+
 
 const createUser = asyncHandler(async (req,res) => {
     const {username,email,password} = req.body;
@@ -51,4 +51,9 @@ const logoutCurrentUser = asyncHandler(async (req,res) =>{
     })
     res.status(200).json({message:"Logout successfully"});
 })
-export {createUser,loginUser,logoutCurrentUser};
+
+const getAllUsers = asyncHandler(async (req,res) => {
+    const users = await User.find({});
+    res.json(users);
+})
+export {createUser,loginUser,logoutCurrentUser,getAllUsers};
