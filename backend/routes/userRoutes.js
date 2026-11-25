@@ -16,3 +16,4 @@ router.route('/:id')
 .put(authenticate,autherizeAdmin,updateUserById)
 
 export default router;
+

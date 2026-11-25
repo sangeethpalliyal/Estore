@@ -1,4 +1,4 @@
-import {Outlet} from "react-router-dom"
+import {Outlet} from "react-router"
 import {ToastContainer} from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css'
 import Navigation from "./pages/auth/Navigation"
@@ -9,7 +9,7 @@ const App = () => {
     <ToastContainer/>
     <Navigation/>
     <main className="py3">
-      
+      <Outlet/>
     </main>
     </>
   )
